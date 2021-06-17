@@ -54,7 +54,7 @@ const cats = [
 ];
 
 
-
+// stampo in pagina i gatti con il nome e il proprio colore
 
 cats.forEach((element) => {
     document.getElementById('container').innerHTML += 
@@ -64,7 +64,7 @@ cats.forEach((element) => {
     `;
     
 
-    })
+    });
 
 
 
@@ -82,6 +82,17 @@ cats.forEach((element) => {
 //   Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro se il gatto è più vecchio.
 
 
+// divido i gatti in due contenitori
+const maleCats = [];
+const femaleCats = [];
+
+// rosa se è femmina e blue se è maschio
+const pink = "#EEA7B3";
+
+const blue = "#211CBB";
+
+
+// il colore del fiocco deve essere più tenue se è più giovane e se è vecchio più scuro
 
 
 
