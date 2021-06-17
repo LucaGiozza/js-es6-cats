@@ -3,51 +3,66 @@
 // Tramite il forEach(), stampare in pagina tutti i gattini, ciascuno
 //  con il proprio colore e il proprio nome.
 
+// definisco un array di oggetti
 
-const gatti = [
+
+const cats = [
 {
-'nome': 'buffy',
-'eta'  : 5,
-'colore': 'grigio',
-'sesso' : 'maschio'
+   'nome': 'buffy',
+    'age'  : 5,
+    'color': '#F75C1E',
+   'gender' : 'maschio'
 
 },
 {
     'nome': 'silvestro',
-    'eta'  : 3,
-    'colore': 'rosso',
-    'sesso' : 'maschio'
+    'age'  : 3,
+    'color': 'F75C1E',
+    'gender' : 'maschio'
     
  },
  {
     'nome': 'layla',
-    'eta'  : 9,
-    'colore': 'bianco',
-    'sesso' : 'femmina'
+    'age'  : 9,
+    'color': '#000000',
+    'gender' : 'femmina'
     
 },
 {
     'nome': 'susette',
-    'eta'  : 1,
-    'colore': 'nero',
-    'sesso' : 'femmina'
+    'age'  : 1,
+    'color': '#AAA5A2',
+    'gender' : 'femmina'
     
-    }
+ },
+ {
+    'nome': 'boston',
+     'age'  : 1,
+     'color': '#000000',
+    'gender' : 'maschio'
+        
+},
+{
+     'nome': 'claire',
+     'age'  : 1,
+     'color': '#B900F6',
+     'gender' : 'femmina'
+            
+}
 
   
-
-
-
-
-
 ];
 
 
 
 
-gatti.forEach((element) => {
-    console.log(element.nome);
-    console.log(element.colore);
+cats.forEach((element) => {
+    document.getElementById('container').innerHTML += 
+    
+    `
+    ${element.nome}<i class = "fas fa-cat" style ="color: ${element.color}"></i> 
+    `;
+    
 
     })
 
