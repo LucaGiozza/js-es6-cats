@@ -55,6 +55,7 @@ const cats = [
 
 
 // stampo in pagina i gatti con il nome e il proprio colore
+// Milestone 2 Dividere i gatti in due contenitori distinti in base al sesso e aggiungere
 
 cats.forEach((element) => {
     document.getElementById('container').innerHTML += 
@@ -67,24 +68,16 @@ cats.forEach((element) => {
     });
 
 
+    document.getElementById("container").innerHTML += "<br/><br/>Milestone 2";
 
 
 
 
-
-
-
-
-
-
-// Milestone 2 Dividere i gatti in due contenitori distinti in base al sesso e aggiungere
-//  a fianco di ogni gattino un fiocco colorato di rosa, se femmina, o di blu, se maschio.
-//   Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro se il gatto è più vecchio.
 
 
 // divido i gatti in due contenitori
-const maleCats = [];
-const femaleCats = [];
+// const maleCats = [];
+// const femaleCats = [];
 
 // rosa se è femmina e blue se è maschio
 const pink = "#EEA7B3";
@@ -129,63 +122,106 @@ const newCats = cats.map((element) =>{
     }
 
 });
-
-newCats.forEach((element) => {
-    document.getElementById('container').innerHTML += 
-    
-    `
-    <br/><br/>
-    ${element.nome}<i class = "fas fa-cat" style ="color: ${element.color}"></i> 
-    <i class = "fas fa-ribbon" style ="color: ${element.ribbon.color}; opacity : ${element.ribbon.opacity} "</i> 
-
-    `;
-    
-
-    });
-
-    
-
-
-console.log(newCats);
-
-
- maleCats = newCats.filter((element) => {
-    return element.gender === "maschio";
-    
-    });
-    maleCats.forEach((element) => {
-        document.getElementById('container').innerHTML += 
+const printCatsRibbon = (array) => {
+    array.forEach((element) => {
+        document.getElementById("container").innerHTML += `<br/><br/>
+            ${element.name} : <i class="fas fa-cat" style="color:${element.color}"></i> 
+            <i class="fas fa-ribbon" style="color:${element.ribbon.color}; opacity:${element.ribbon.opacity}"></i>,
         
-        `
-        <br/><br/>
-        ${element.nome}<i class = "fas fa-cat" style ="color: ${element.color}"></i> 
-        <i class = "fas fa-ribbon" style ="color: ${element.ribbon.color}; opacity : ${element.ribbon.opacity} "</i> 
-    
         `;
+    });
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// newCats.forEach((element) => {
+//     document.getElementById('container').innerHTML += 
+    
+//     `
+//     <br/><br/>
+//     ${element.nome}<i class = "fas fa-cat" style ="color: ${element.color}"></i> 
+//     <i class = "fas fa-ribbon" style ="color: ${element.ribbon.color}; opacity : ${element.ribbon.opacity} "</i> 
+
+//     `;
+    
+
+//     });
+
+    
+
+
+// console.log(newCats);
+
+
+//  maleCats = newCats.filter((element) => {
+//     return element.gender === "maschio";
+    
+//     });
+//     maleCats.forEach((element) => {
+//         document.getElementById('container').innerHTML += 
+        
+//         `
+//         <br/><br/>
+//         ${element.nome}<i class = "fas fa-cat" style ="color: ${element.color}"></i> 
+//         <i class = "fas fa-ribbon" style ="color: ${element.ribbon.color}; opacity : ${element.ribbon.opacity} "</i> 
+    
+//         `;
         
     
-        });
+//         });
 
        
         
     
 
-    const feMaleCats = newCats.filter((element)=> {
-        return element.gender === "femmina";
+//     const feMaleCats = newCats.filter((element)=> {
+//         return element.gender === "femmina";
         
-        });
-        feMaleCats.forEach((element) => {
-            document.getElementById('container').innerHTML += 
+//         });
+//         feMaleCats.forEach((element) => {
+//             document.getElementById('container').innerHTML += 
             
-            `
-            <br/><br/>
-            ${element.nome}<i class = "fas fa-cat" style ="color: ${element.color}"></i> 
-            <i class = "fas fa-ribbon" style ="color: ${element.ribbon.color}; opacity : ${element.ribbon.opacity} "</i> 
+//             `
+//             <br/><br/>
+//             ${element.nome}<i class = "fas fa-cat" style ="color: ${element.color}"></i> 
+//             <i class = "fas fa-ribbon" style ="color: ${element.ribbon.color}; opacity : ${element.ribbon.opacity} "</i> 
         
-            `;
+//             `;
             
         
-            });
+//             });
 
  
 
@@ -193,35 +229,35 @@ console.log(newCats);
 
 
 
-// Milestone 3 Creare un nuovo array con prima tutti i gattini femmina e poi tutti i gattini maschio, 
-// inserendo solamente nome, colore e opacità del fiocco per ogni gatto.
+// // Milestone 3 Creare un nuovo array con prima tutti i gattini femmina e poi tutti i gattini maschio, 
+// // inserendo solamente nome, colore e opacità del fiocco per ogni gatto.
 
-let catsFemaleMale = [...femaleCats, ...Malecats];
-console.log(catsFemaleMale);
+// let catsFemaleMale = [...femaleCats, ...Malecats];
+// console.log(catsFemaleMale);
 
 
-const catsFemaleMaleZip = catsFemaleMale((element) => {
+// const catsFemaleMaleZip = catsFemaleMale((element) => {
 
-   const{nome, color, ribbon } = element;
-    return {
-       nome,
-       color,
-       ribbon
-    }
-})
+//    const{nome, color, ribbon } = element;
+//     return {
+//        nome,
+//        color,
+//        ribbon
+//     }
+// })
 
-catsFemaleMaleZip.forEach((element) => {
-    document.getElementById('container').innerHTML += 
+// catsFemaleMaleZip.forEach((element) => {
+//     document.getElementById('container').innerHTML += 
     
-    `
-    <br/><br/>
-    ${element.nome}<i class = "fas fa-cat" style ="color: ${element.color}"></i> 
-    <i class = "fas fa-ribbon" style ="color: ${element.ribbon.color}; opacity : ${element.ribbon.opacity} "</i> 
+//     `
+//     <br/><br/>
+//     ${element.nome}<i class = "fas fa-cat" style ="color: ${element.color}"></i> 
+//     <i class = "fas fa-ribbon" style ="color: ${element.ribbon.color}; opacity : ${element.ribbon.opacity} "</i> 
 
-    `;
+//     `;
     
 
-    });
+//     });
 
 
 
