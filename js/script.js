@@ -122,16 +122,54 @@ const newCats = cats.map((element) =>{
     }
 
 });
-const printCatsRibbon = (array) => {
+const stampoFiocco = (array) => {
     array.forEach((element) => {
         document.getElementById("container").innerHTML += `<br/><br/>
-            ${element.name} : <i class="fas fa-cat" style="color:${element.color}"></i> 
+            ${element.nome} : <i class="fas fa-cat" style="color:${element.color}"></i> 
             <i class="fas fa-ribbon" style="color:${element.ribbon.color}; opacity:${element.ribbon.opacity}"></i>,
         
         `;
     });
 } 
 
+
+// Dividere i gatti in due contenitori distinti in base al sesso 
+const maleCats = newCats.filter((element) => {
+    return element.gender === "maschio";
+});
+
+
+document.getElementById("container").innerHTML += "<br/><br/>Maschi";
+stampoFiocco(maleCats);
+
+
+const femaleCats = newCats.filter((element) => {
+    return element.gender === "femmina";
+});
+
+
+
+
+document.getElementById("container").innerHTML += "<br/><br/>Femmine";
+stampoFiocco(femaleCats);
+
+document.getElementById("container").innerHTML += "<br/><br/>Milestone 3";
+// Creare un nuovo array con prima tutti i gattini femmina 
+// e poi tutti i gattini maschio, 
+let catsFemaleMale = [...femaleCats, ...maleCats];
+// inserendo solamente nome, colore e opacità del fiocco per ogni gatto.
+const gattoModificato = catsFemaleMale.map((element) => {
+   const {nome, color, ribbon} = element;
+
+   return {
+        nome,
+        color,
+        ribbon
+   } 
+});
+
+
+stampoFiocco(gattoModificato);
 
 
 
